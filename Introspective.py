@@ -230,7 +230,7 @@ def investigateR1():
     print()
     print("You take a longer look around the room.")
     print("Even so, nothing in particular stands out to you.")
-    print("It's sparsely furnished, with a small bedside table on the right, a dresser, and a standing mirror.")
+    print("It's sparsely furnished, with a dresser, a standing mirror, and a small bedside table on the right.")
     print()
     print("What do you do?")
     print()
@@ -257,6 +257,7 @@ def investigateR2():
     #print("- The trunk")
     print("- The dresser")
     print("- The mirror")
+    print()
     print("- Return")
 
     #Taking input
@@ -309,7 +310,7 @@ def mirrorR1():
     choice = input("> ").lower()
     #Deciding direction
     if  choice == "Stand in front":
-        mirrorR1()
+        mirrorR2()
     elif  choice == "return":
         roomreturn()
     else:
@@ -319,7 +320,58 @@ def mirrorR1():
 
 def mirrorR2():
     print()
+    print("As wave of nausea hits you at the idea.")
+    print("For some reason, you feel sick.")
+    print()
+    print("What do you do?")
+    print()
+    print("- Stand in front")
+    print("- Return")
+
+    #Taking input
+    choice = input("> ").lower()
+    #Deciding direction
+    if  choice == "stand in front":
+        mirrorR3()
+    elif  choice == "return":
+        roomreturn()
+    else:
+      print("I don't understand")
+      mirrorR2()
+
+
+def mirrorR3():
+    print()
+    print("As you begin to step in front, the sickness grows worse.")
+    print("Your stomach chlenches with revulsion.")
+    print()
+    print("What do you do?")
+    print()
+    print("- Stand in front")
+    print("- Return")
+
+    #Taking input
+    choice = input("> ").lower()
+    #Deciding direction
+    if  choice == "stand in front":
+        mirrorR4()
+    elif  choice == "return":
+        roomreturn()
+    else:
+      print("I don't understand")
+      mirrorR3()
+
+
+def mirrorR4():
+    print()
+    print("You stand in front of the mirror.")
+    print("Your distorted figure appears in front of you.")
+    print("Cuts cover your entire body.")
+    print("You vomit.")
     print("")
+    print()
+    print("End")
+
 
 
 def bedsidetableR1():
@@ -459,7 +511,6 @@ def roomreturn():
         print("You feel cold. Why keep trying?")
     if returnnum >= 3:
         print("You feel cold.")
-    returnnum += 1
     print("What do you do?")
     print()
     if window == False:
@@ -471,7 +522,7 @@ def roomreturn():
     else:
         print("- Go back to bed")
     if investigate == False:
-        print("- Investigate the furniture")
+        print("- Look at the furniture")
     else:
         print("- Go back to bed")
     print("- Go back to bed")
@@ -480,14 +531,17 @@ def roomreturn():
     choice = input("> ").lower()
     #Deciding direction
     if  choice == "open the window":
+        returnnum += 1
         window = True
         windowR1()
     elif  choice == "open the door":
+        returnnum += 1
         door = True
         doorR1()
     elif  choice == "go back to bed":
         backtobedR1()
-    elif  choice == "investigate the furniture":
+    elif  choice == "look at the furniture":
+        returnnum += 1
         investigate = True
         investigateR1()
     else:

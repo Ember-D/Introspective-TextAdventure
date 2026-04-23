@@ -3,6 +3,7 @@ window = False
 door = False
 investigate = False
 hasphoto = False
+r = True
 returnnum = 0
 
 #Title n stuff
@@ -68,8 +69,30 @@ def getup():
 def liedown():
     print()
     print("You lie back down.")
-    print("The bed is quite comfortable after all. Who wouldn't")
+    print("The bed is confortable.")
+    print("You feel relaxed, and... tired.")
+    print("Your eyes begin to close")
+    print("As your head falls to the right, you see her face, one last time.")
+    print("Your eyes shut.")
+    print("You do not wake.")
+    print("You didn't keep your promise")
+    print()
+    print("End")
 
+
+def backtobedR1():
+    print()
+    print("You get back into bed.")
+    print("The relief is instant, and yet, your still cold.")
+    print("You feel relaxed, and... tired.")
+    print("Your eyes begin to close")
+    print("As your head falls to the right, you see her face, one last time.")
+    print("Your eyes shut.")
+    print("You do not wake.")
+    print("You didn't keep your promise")
+    print()
+    print("End")
+    
 
 def doorR1():
     print()
@@ -151,7 +174,7 @@ def windowR3():
     print("You do not wake.")
     print("You didn't keep your promise")
     print()
-    print("The end")
+    print("End")
 
 
 
@@ -176,10 +199,6 @@ def investigateR1():
       print("I don't understand")
       investigateR1()
 
-
-def backtobedR1():
-    print()
-    print("You return to the bed------------")
 
 
 def investigateR2():
@@ -378,6 +397,28 @@ def roomreturn():
         print("- Go back to bed")
     print("- Go back to bed")
 
+
+def retry(r):
+    print()
+    print()
+    print("Do you want to play again?")
+    print("Yes, or no.")
+
+    #Taking input
+    choice = input("> ").lower()
+    #Deciding direction
+    if  choice == "yes":
+        intro()
+    if  choice == "no":
+        print()
+        r = False
+        return r
+    else:
+      print("I don't understand")
+      retry()
+
+
 #Calling the intro function to start the game
 intro()
-
+#while r == True:
+#    retry()

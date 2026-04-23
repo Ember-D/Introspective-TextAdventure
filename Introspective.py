@@ -107,6 +107,15 @@ def backtobedR1():
         print("You open them.")
         print("You see the photo of the two young women on the table beside you.")
         print("You finally recognise yourself.")
+        print("You turn your head to see the other woman sittng beside you.")
+        print("She notices, and begin to cry.")
+        print("She takes your hand.")
+        print("You woke up.")
+        print("You kept your promise.")
+        print("You stayed with her.")
+        print()
+        print("End")
+
     
 
 def doorR1():
@@ -282,12 +291,35 @@ def trunkR1():
 def dresserR1():
     print()
     print("WIP")
+    roomreturn()
 
 
 def mirrorR1():
     print()
     print("You take a closer look at the mirror.")
-    print("It's tall ")
+    print("It's about as tall as you are, and just slightly wider, and.")
+    print("sits an a normal wooden frame.")
+    print()
+    print("What do you do?")
+    print()
+    print("- Stand in front")
+    print("- Return")
+
+    #Taking input
+    choice = input("> ").lower()
+    #Deciding direction
+    if  choice == "Stand in front":
+        mirrorR1()
+    elif  choice == "return":
+        roomreturn()
+    else:
+      print("I don't understand")
+      mirrorR1()
+
+
+def mirrorR2():
+    print()
+    print("")
 
 
 def bedsidetableR1():
